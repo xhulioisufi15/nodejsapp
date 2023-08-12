@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const axios = require('axios');
+
+const databaseURL = 'https://ecommerce-project-eb2e6-default-rtdb.europe-west1.firebasedatabase.app/orders.json';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -18,8 +21,13 @@ app.get('/submit-purchase', (req, res) => {
     email,
   };
 
-  console.log('New Purchase:', purchase);
-  res.send('Purchase submitted successfully');
+  axios.post(databaseURL, purchase)
+  .then(response => {
+    res.send('Order created!');
+  })
+  .catch(error => {
+    console.error('Error creating order:', error);
+  });
 });
 
 app.listen(port, () => {
