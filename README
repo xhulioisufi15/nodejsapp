@@ -1,0 +1,2 @@
+//  To run the docker image run the terminal command below:
+//  docker run -p 3001:3001 -d node-js-ecommerce-middleware
