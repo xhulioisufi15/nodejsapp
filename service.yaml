@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecom-backend-service
+  name: ecommerce-be-service
 spec:
   selector:
-    app: ecom-backend
+    app: ecommerce-be
   ports:
     - protocol: TCP
       port: 80  

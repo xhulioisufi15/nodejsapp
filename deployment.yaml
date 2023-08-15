@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecom-backend
+  name: ecommerce-be
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: ecom-backend
+      app: ecommerce-be
   template:
     metadata:
       labels:
-        app: ecom-backend
+        app: ecommerce-be
     spec:
       containers:
-        - name: ecom-container
+        - name: ecommerce-be-container
           image: xhulioisufi/ecommerce:v1
           ports:
             - containerPort: 3001
