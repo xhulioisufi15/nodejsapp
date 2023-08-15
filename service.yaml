@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecommerce-be-service
+  name: nodejs-app-service
 spec:
   selector:
-    app: ecommerce-be
+    app: nodejs-app
   ports:
     - protocol: TCP
       port: 80  

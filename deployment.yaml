@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecommerce-be
+  name: nodejs-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ecommerce-be
+      app: nodejs-app
   template:
     metadata:
       labels:
-        app: ecommerce-be
+        app: nodejs-app
     spec:
       containers:
-        - name: ecommerce-be-container
+        - name: nodejs-app-container
           image: xhulioisufi/ecommerce:v1
           ports:
             - containerPort: 3001
